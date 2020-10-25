@@ -375,6 +375,7 @@
                                 function deleteBtn(){
                                     if (confirm("삭제하시겠습니까?")) {
                                         //삭제하기
+                                        listform.submit();
                                     } else {
                                         //취소
                                     }
@@ -424,13 +425,13 @@
                                             <div>금액</div>
                                         </div>
                                         <div class="col-1 p-1" style=" text-align:right;">
-                                            <button class="all_cart_delete_btn" onclick="deleteBtn();">삭제</button>
+                                            <button class="all_cart_delete_btn" type="submit">삭제</button>
                                         </div>
                                    
                                     </div>
                                     
                                     {% for i in array %}
-                                   
+                                   <form id ="listform" action="delete">
                                     <div class="row" style="border: solid 1px gainsboro; margin: 0 50px; display: flex; align-items: center;">
                                         <div class="col-2 p-1 pl-3" style="text-align:left;">
                                             <input type="checkbox" class="check" name="allcheck3" onclick="check(this)">&nbsp;&nbsp;&nbsp;&nbsp;
@@ -443,6 +444,7 @@
                                         <!-- 상품보기 쪽 상품들이 들어와야한다. -->
                                         <div class="col-7 p-1">
                                             <div><p class="pt-3">{{i.1}}</p></div>
+                                            <input type="hidden" name="name" value={{i.1}}>
                                         </div>
                                         <div class="col-2 p-1" style=" text-align:center;">
                                             <div>{{i.2}} </div>
@@ -451,6 +453,7 @@
                                             <button class="cart_delete_btn" onclick="deleteBtn();">삭제</button>
                                         </div>
                                     </div>
+                                </form>
                                     {%endfor%}
                                    
                                 </div>       
@@ -472,7 +475,8 @@
                                     </div>
 
                                     <!-- 메인에 있는 선물세트들이 들어와야함 -->
-                                  {%for i in  array %}
+                                  {%for i in  array1 %}
+                                  <form id ="listform" action="delete">
                                     <div class="row" style="border: solid 1px gainsboro; margin: 0 50px; display: flex; align-items: center;">
                                         <div class="col-2 p-1 pl-3" style="text-align:left;">
                                             <input type="checkbox" class="check" name="allcheck3" onclick="check(this)">&nbsp;&nbsp;&nbsp;&nbsp;
@@ -483,6 +487,7 @@
                                         </div>
                                         <div class="col-7 p-1">
                                             <div><p class="pt-3">{{i.1}}</p></div>
+                                            <input type="hidden" name="name" value={{i.1}}>
                                         </div>
                                         <div class="col-2 p-1" style=" text-align:center;">
                                             <div>{{i.2}}</div>
@@ -491,6 +496,7 @@
                                             <button class="cart_delete_btn" onclick="deleteBtn();">삭제</button>
                                         </div>
                                     </div>
+                                </form>
                                     {%endfor%}
                                 </div>       
                             </div>
@@ -518,7 +524,7 @@
                                 }       
                             </script>
                             <div style="justify-content:center;">
-                                <br>	
+                                <br>   
                                 <div class="card bg-light" style="width: 500px; margin-left:250px;">
                                     <article class="card-body mx-auto" style="max-width: 400px;">
                                         

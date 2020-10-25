@@ -76,7 +76,8 @@
 
                 const price = draggableElement.alt;
                 const name = draggableElement.name;
-              
+                const array = draggableElement.id;
+                
                 event
                   .dataTransfer
                   .clearData();
@@ -85,8 +86,11 @@
                   console.log(id);
                   console.log(price);
 
-                  $('.item_price'+id).text(price+"원");
-                  $('.item_name'+id).text(name);
+                  //$('.item_price'+id).text(price+"원");
+                  //$('.item_name'+id).text(name);
+                 alert(document.getElementsByName("asdf").innerText);
+                  document.getElementsByName("asdf").innerText="ddd";
+
                   draggableElement.style.height = 148+'px'
                   draggableElement.style.width = 187+'px'
               }
@@ -319,6 +323,7 @@
                         <form>
                             <div class="form-group">
                                 <p class= "ml-4 pl-2">
+                                   
                                     <input class="mr-2" id = "setName" placeholder= "세트 이름" style="font-size:15px; ">
                                     <a href="" class="setnameBtn"><i class="fas fa-plus fa-xl fa-border"></i><!--<img src = "{% static 'img/plus.png' %}" style="width:25px;height:25px;">--></a>
                                 </p>
@@ -358,6 +363,10 @@
                                 <div class="row" style="">
                                     <div class="col-7 mt-4">
                                         <!--class="item_name"+{{i}} (0,5,6은 제외)-->
+                                        {%for i in itemss%}
+                                            <p id ="dd{{i.2}}" name="asdf">{{i.1}}</p>
+                                        {%endfor%}
+
                                         <p class="item_name0"></p> 
                                         <p class="item_name1"></p> 
                                         <p class="item_name2"></p> 
@@ -494,11 +503,16 @@
                     <i class="far fa-heart ml-4" style="color: red;"></i> 찜목록
                 </div>
                 <div class="zzim_content mt-5" style="text-align: center;">
-                    <!--id="{{id}}" name="{{"아이템 이름"}}" alt="{{가격}}"-->
-                    <img id ="1" ondragstart='onDragStart(event);' draggable="true" ondrop='onDrop(event);' class="zzim1 mr-5"src = "http://127.0.0.1:8000/static/img/lotte_back.png" style="width: 100px;height:100px" draggable="true" ondragstart="drag(event)" name="아이템1" alt="2000">
-                    <img id ="2" ondragstart='onDragStart(event);' draggable="true" ondrop='onDrop(event);' class="zzim2 mr-5 " src = "http://127.0.0.1:8000/static/img/lotte_back.png" style="width: 100px;height:100px" draggable="true" ondragstart="drag(event)" name="아이템2" alt="3000">
-                    <img id ="3" ondragstart='onDragStart(event);' draggable="true" ondrop='onDrop(event);' class="zzim3 mr-5 " src = "http://127.0.0.1:8000/static/img/lotte_back.png" style="width: 100px;height:100px" draggable="true" ondragstart="drag(event)" name="아이템3" alt="4000">
-                    <img id ="4" ondragstart='onDragStart(event);' draggable="true" ondrop='onDrop(event);' class="zzim4" src = "http://127.0.0.1:8000/static/img/lotte_back.png" style="width: 100px;height:100px" draggable="true" ondragstart="drag(event)" name="아이템4" alt="5000">
+                    <!-- id="{{id}}" name="{{"아이템 이름"}}" alt="{{가격}}"-->
+                    <!-- <img id ="1" ondragstart='onDragStart(event);' draggable="true" ondrop='onDrop(event);' class="zzim1 mr-5"src = "http://127.0.0.1:8000/static/img/prod1.png" style="width: 100px;height:100px" draggable="true" ondragstart="drag(event)" name="아이템1" alt="9650">
+                    <img id ="2" ondragstart='onDragStart(event);' draggable="true" ondrop='onDrop(event);' class="zzim2 mr-5 " src = "http://127.0.0.1:8000/static/img/prod2.png" style="width: 100px;height:100px" draggable="true" ondragstart="drag(event)" name="아이템2" alt="9980">
+                    <img id ="3" ondragstart='onDragStart(event);' draggable="true" ondrop='onDrop(event);' class="zzim3 mr-5 " src = "http://127.0.0.1:8000/static/img/prod3.png" style="width: 100px;height:100px" draggable="true" ondragstart="drag(event)" name="아이템3" alt="5000">
+                    <img id ="4" ondragstart='onDragStart(event);' draggable="true" ondrop='onDrop(event);' class="zzim4 mr-5" src = "http://127.0.0.1:8000/static/img/gift_set1_2.png" style="width: 100px;height:100px" draggable="true" ondragstart="drag(event)" name="아이템4" alt="90000">
+                    <img id ="5" ondragstart='onDragStart(event);' draggable="true" ondrop='onDrop(event);' class="zzim4 mr-5" src = "http://127.0.0.1:8000/static/img/prod4.png" style="width: 100px;height:100px" draggable="true" ondragstart="drag(event)" name="아이템5" alt="39900">
+                    <img id ="6" ondragstart='onDragStart(event);' draggable="true" ondrop='onDrop(event);' class="zzim4 mr-5" src = "http://127.0.0.1:8000/static/img/gift_set.jpg" style="width: 100px;height:100px" draggable="true" ondragstart="drag(event)" name="아이템6" alt="15000"> -->
+                    {%for i in itemss %}
+                        <img id ="{{i.0}}" ondragstart='onDragStart(event);' draggable="true" ondrop='onDrop(event);' class="zzim4 mr-5" src = "{{i.0}}" style="width: 100px;height:100px" draggable="true" ondragstart="drag(event)" name="{{i.1}}" alt="{{i.2}} " value="asd">
+                    {%endfor %}
                 </div>
                 
                 

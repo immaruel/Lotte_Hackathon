@@ -42,6 +42,7 @@ urlpatterns = [
     path('birthday/', views.birthday,name="birthday"),
     path('tgday/', views.tgday,name="tgday"),
     path('moving/', views.moving,name="moving"),
+    path('mypage/delete',views.listDelete, name="listDelete"),
 
     
 ]

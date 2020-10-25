@@ -12,6 +12,7 @@ from django.contrib.auth import authenticate, login, logout
 
 from django.contrib.auth.models import Group
 
+from .filters import ItemFilter
 
 # from django.contrib.auth.forms import UserCreationForm
 # from django.contrib import messages
@@ -69,9 +70,57 @@ def search(request):
     return render(request, 'app/search.html',context)
 
 # 상품만들기
+
 def make(request):
-    customer = Customer.objects.all()
-    context = {'customer':customer,'check' : login_check(request),'name': str(request.user) }
+    customer = Customer.objects.get(user=request.user)
+    item = Item.objects.all()
+    str1 = []
+    list=customer.zzim_list.split(',')
+    new_list = []
+    string1=""
+        #중복제거
+    for v in list:
+        if v not in new_list:
+            new_list.append(v)
+        #중복제거한 것 다시 찜리스트에 넣기
+    for v in new_list:
+        string1 += v+','
+    customer.zzim_list=string1
+    customer.save()
+    # item = Item.objects.get(customer=customer)
+
+    
+    temp = customer.zzim_list.split(',')
+    arr1=[]
+    for i in temp:
+        try:
+            str2 = Item.objects.get(name=i)
+            arr =["../../static/img/"+str(str2.image).split('/')[3],i,str2.price]
+            arr1.append(arr)
+        except:
+            pass
+
+    # for i in arr1:
+    #     print(i)
+    arr2 = arr1
+    temp1 = []
+    temp2 = []
+    for i in arr1:
+        ar=[]
+        for v in i:
+            ar.append(v)
+        if ("세트") in ar[1]:
+            temp1.append(ar)
+    
+    for i in arr1:
+        ar=[]
+        for v in i:
+            ar.append(v)
+        if not (("세트") in ar[1]):
+            temp2.append(ar)
+            
+    print(temp2)
+    context = {'customer':customer,'check' : login_check(request),'name': str(request.user),'itemss':temp2 }
     return render(request, 'app/make.html',context)
 
 # 랭킹
@@ -130,6 +179,7 @@ def zzim(request):
 
     return redirect('../mypage')
 #2 
+
 def myPage(request):
     customer = Customer.objects.get(user=request.user)
     item = Item.objects.all()
@@ -150,26 +200,62 @@ def myPage(request):
 
     
     temp = customer.zzim_list.split(',')
-    print(temp)
     arr1=[]
     for i in temp:
         try:
             str2 = Item.objects.get(name=i)
             arr =["../../static/img/"+str(str2.image).split('/')[3],i,str2.price]
-            print("-------------------------------------")
-            print(arr)
-            print("-------------------------------------")
             arr1.append(arr)
         except:
             pass
-    
-    for i in arr1:
-        print(i)
 
+    # for i in arr1:
+    #     print(i)
+    arr2 = arr1
+    temp1 = []
+    temp2 = []
+
+    print("lllll")
+    for i in arr1:
+        ar=[]
+        for v in i:
+            ar.append(v)
+        if ("세트") in ar[1]:
+            temp1.append(ar)
+    
+    
+    print(temp1)
+    print("11111111")
+    print("2222222")
+    for i in arr1:
+        ar=[]
+        for v in i:
+            ar.append(v)
+        if not (("세트") in ar[1]):
+            temp2.append(ar)
+    
+    
+    print(temp1)
+    print("2222222")
     # 산추 zzim추가했다가 지움
     context = {'customer':customer,'check':login_check(request), 
-    'name':str(request.user),'simage':str1, 'item':item,'array':arr1}
+    'name':str(request.user),'simage':str1, 'item':item,'array':temp2,'array1':temp1}
     return render(request, 'app/mypage.html',context)
+
+def listDelete(request):
+    print("3333333333333333")
+    list1= request.GET.get("name")
+    print(list1)
+    customer = Customer.objects.get(user=request.user)
+    array= customer.zzim_list.split(',')
+
+    str1 =""
+    for i in array:
+        if not list1 in i:
+            str1 += i + ","
+    customer.zzim_list =str1
+    customer.save()
+    return redirect('../mypage')
 
 # def createOrder(request):
 # 	context = {}

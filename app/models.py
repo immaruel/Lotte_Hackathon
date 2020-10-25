@@ -20,6 +20,7 @@ class Customer(models.Model):
     like = models.IntegerField(max_length=None, null=True) # 좋아요수
     sales = models.IntegerField(max_length=None, null=True) # 판매량
     zzim_list = models.CharField(max_length=200, null=True)
+    buy_list = models.CharField(max_length=200, null=True)
     
     
     def __str__(self):
