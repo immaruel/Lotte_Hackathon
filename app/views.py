@@ -121,8 +121,10 @@ def logoutUser(request):
 def zzim(request):
  
     asd = Customer.objects.get(user=request.user)
-    asd.zzim_list =  request.GET.get('name',None)
+    asd.zzim_list +=  "," + request.GET.get('name',None)
     asd.save()
+    str1 = asd.zzim_list.split(',')
+    print(str1)
     # zzim=int(1004)
     
 
@@ -130,15 +132,43 @@ def zzim(request):
 #2 
 def myPage(request):
     customer = Customer.objects.get(user=request.user)
-    item = Item.objects.get(customer=customer)
-    set1 = Set.objects.get(name=customer.zzim_list)
-    print(customer.zzim_list)
-    print(set1.name)
-    print(set1.price)
+    item = Item.objects.all()
+    str1 = []
+    list=customer.zzim_list.split(',')
+    new_list = []
+    string1=""
+        #중복제거
+    for v in list:
+        if v not in new_list:
+            new_list.append(v)
+        #중복제거한 것 다시 찜리스트에 넣기
+    for v in new_list:
+        string1 += v+','
+    customer.zzim_list=string1
+    customer.save()
+    # item = Item.objects.get(customer=customer)
+
     
+    temp = customer.zzim_list.split(',')
+    print(temp)
+    arr1=[]
+    for i in temp:
+        try:
+            str2 = Item.objects.get(name=i)
+            arr =["../../static/img/"+str(str2.image).split('/')[3],i,str2.price]
+            print("-------------------------------------")
+            print(arr)
+            print("-------------------------------------")
+            arr1.append(arr)
+        except:
+            pass
+    
+    for i in arr1:
+        print(i)
 
     # 산추 zzim추가했다가 지움
-    context = {'customer':customer,'set':set1,'item':item,'check':login_check(request), 'name':str(request.user)}
+    context = {'customer':customer,'check':login_check(request), 
+    'name':str(request.user),'simage':str1, 'item':item,'array':arr1}
     return render(request, 'app/mypage.html',context)
 
 # def createOrder(request):
@@ -208,3 +238,34 @@ def pay(request):
 #     return render(request, 'app/mypage_cart.html',{"hi":context})
 
 
+# birthday
+def birthday(request):
+    customer = Customer.objects.all()
+
+    # 산추
+    item=Item.objects.all()
+    context = {'customer':customer,'check' : login_check(request),'name': str(request.user), 'item':item }
+    
+    return render(request, 'app/birthday.html',context)
+
+
+# tgday
+def tgday(request):
+    customer = Customer.objects.all()
+
+    # 산추
+    item=Item.objects.all()
+    context = {'customer':customer,'check' : login_check(request),'name': str(request.user), 'item':item }
+    
+    return render(request, 'app/tgday.html',context)
+
+
+# moving
+def moving(request):
+    customer = Customer.objects.all()
+
+    # 산추
+    item=Item.objects.all()
+    context = {'customer':customer,'check' : login_check(request),'name': str(request.user), 'item':item }
+    
+    return render(request, 'app/moving.html',context)

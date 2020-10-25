@@ -38,6 +38,11 @@ urlpatterns = [
 
     path('make_search/', views.make_search,name="make_search"),
 
+    #산추
+    path('birthday/', views.birthday,name="birthday"),
+    path('tgday/', views.tgday,name="tgday"),
+    path('moving/', views.moving,name="moving"),
+
     
 ]
 

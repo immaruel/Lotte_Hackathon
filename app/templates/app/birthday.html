@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>롯데, 상품검색</title>
+    <title>롯데, #생일선물</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/search.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -199,102 +199,7 @@
 
 
 
-    <!-- 해시태그 시작-->
-    <!-- <div style="float: left; width:100%">
-        <button type="button" class="btn-plus btn-link hash_btn" data-toggle="collapse" data-target="#collapseOne"><i
-                class="fa fa-plus-circle"></i> </button>
-
-        <h6 class="hash_txt" style="float: right; margin-right: 60%;">다른 해시태그 살펴보기 </h6>
-
-
-    </div>
-
-
-    <div class="container bs-example">
-
-        <div class="accordion greyboxshadow oneborder offset-md-0"
-            style="border-radius: 3px;width:70%;margin-left: 15%;" id="accordionExample">
-
-
-
-            <div class="card">
-
-                
-
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-
-                    <div class="card-body">
-                        <table>
-                            <tr class="td_line">
-                             
-                                <td>음료</td>
-                                <td><button class="far2">
-                                        <sel>{{"#상큼한_음료"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#건강_음료"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#커피"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#차"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#top10_음료"}}</sel>
-                                    </button></td>
-
-
-                            </tr>
-
-                            <tr class="td_line">
-                             
-                                <td>과일</td>
-                                <td><button class="far2">
-                                        <sel>{{"#다이어트_과일"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#달콤한_과일"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#재철_과일"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#귤"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#건강_과일"}}</sel>
-                                    </button></td>
-
-                            </tr>
-                            <tr class="td_line">
-                                
-                                <td>생필품</td>
-                                <td><button class="far2">
-                                        <sel>{{"#생필품"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#양치도구"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#수건"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#이삿집"}}</sel>
-                                    </button></td>
-                                <td><button class="far2">
-                                        <sel>{{"#MT"}}</sel>
-                                    </button></td>
-
-                            </tr>
-
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- 해시태그 끝 -->
+    
 
     <div class="container" style="visibility: hidden;">
         안보이는부분/공간차지용<br>안보이는부분/공간차지용<br>안보이는부분/공간차지용<br>
@@ -312,75 +217,28 @@
 
     <!-- 카드 1이 전체 카드를 감싸고 있음 -->
 
-    <!-- for문 구현 -->
-    <!-- <div class="card1">
-        
-        <table>
-            <tr>
-
-                {% for turn in item.all %}
-
-      
-                <td>
-                    <div class="top-section">
-                        <img style="width: 330px;height: 210px;" src="{{turn.image}}">
-            
-                        <div class="price">{{turn.price}}원</div>
-                    </div>
-            
-                    <div class="product-info" style="margin-left: 0%; background-color: #ddd;">
-                        <form action="../zzim">
-                            
-                            <input type="text" name="name" id={{turn.name}} style="visibility: hidden;" value={{turn.name}}>
-                            <div class="name">{{turn.name}}</class>
-                                
-                                <input type="text" name="zim" value="4" style="visibility:hidden; height: 1px;">
-                
-                               
-                                <div class="like mb-2 mr-2" style="float: right;">
-                                    <button class="likebt" style="border: none; background-color: #ddd;"><i class="far fa-heart"></i></button>
-                                </div>
-                
-                              
-                                
-                                <a class="btn" href="{%url 'make'%}">제작하기</a>
-                                <input type="text" name="zim" value="4" style="visibility:hidden; height: 1px;">
-                                
-                            </div>
-                            
-                            
-                        </form>
-                    </div>
-                 
-
-                </td>
-                
-                {% endfor %}
-            </tr>
-         
-            
+    
+    <div style="margin-left: 7%;">
+        <h3>#생일선물</h3>
+    </div>
     
 
-        </table>
-        
-
-       
-    </div> -->
 
 
-
-    <div class="card1">
+    <div class="card1" style="margin-left: 2%;">
         <div class="top-section">
-            <img style="width: 330px;height: 200px;" src="{% static 'img/prod1.png' %}">
+            <img style="width: 330px;height: 200px;" src="{% static 'img/gift_set.jpg' %}">
 
-            <div class="price">{{"9650"}}원</div>
+            <div class="price">{{"15000"}}원</div>
         </div>
 
         <div class="product-info">
             <form action="../zzim">
-            <input type="text" name="name" id="과일선물세트" style="visibility: hidden;" value="과일선물세트"/>
-            <div class="name">{{"퍼퓸 샴푸 컨디셔너"}}</class>
-                <div class="dis">{{"#생필품"}}</div>
+
+                <input type="text" name="name" id="생일선물세트" style="visibility: hidden;" value="생일선물세트">
+
+                <div class="name">{{"롯데 제과 종합 선물세트"}}</class>
+                <div class="dis">{{"#이삿집선물세트 #생일선물"}}</div>
 
                 <!-- 카드안에 하트: 찜하기 -->
                 <div class="like mb-2 mr-2" style="float: right;">
@@ -389,156 +247,81 @@
 
                 <!--카드안에 구매버튼 -->
                 <a class="btn" href="{%url 'make'%}">제작하기</a>
-            </div>
+                </div>
             </form>
-        </div> 
+        </div>
 
 
-        <!-- 카드 2 -->
-        <div class="card2">
-            <div class="top-section">
-                <img style="width: 330px;height: 200px;" id="image-container2" src="{% static 'img/prod2.png' %}">
-
-
-                <div class="price">{{"9980"}}원</div>
-            </div>
-
-            <div class="product-info">
-                <form action="../zzim">
-                    <input type="text" name="name" id="과일선물세트" style="visibility: hidden;" value="과일선물세트"/>
-                <div class="name">{{"머스크 메론"}}</class>
-                    <div class="dis">{{"#추석선물세트"}} {{"#이삿집선물세트"}}</div>
-
-                    <!-- 카드안에 하트: 찜하기 -->
-                    <div class="like mb-2 mr-2" style="float: right;">
-                        <button class="likebt" style="border: none;"><i class="far fa-heart"></i></button>
-                    </div>
-
-                    <!--카드안에 구매버튼 -->
-                    <a class="btn" href="{%url 'make'%}">제작하기</a>
-                </div>
-                </form>
-            </div> 
-
-            <!-- 카드 3 -->
-            <div class="card3">
-                <div class="top-section">
-                    <img style="width: 330px;height: 200px;" id="image-container3" src="{% static 'img/prod3.png' %}">
-
-
-                    <div class="price">{{"5000"}}원</div>
-                </div>
-
-                <div class="product-info">
-                    <form action="../zzim">
-                        <input type="text" name="name" id="과일선물세트" style="visibility: hidden;" value="과일선물세트"/>
-                    <div class="name">{{"과일 큐브 치즈"}}</class>
-                        <div class="dis">{{"#재철_과일"}}</div>
-
-                        <!-- 카드안에 하트: 찜하기 -->
-                        <div class="like mb-2 mr-2" style="float: right;">
-                            <button class="likebt" style="border: none;"><i class="far fa-heart"></i></button>
-                        </div>
-
-                        <!--카드안에 구매버튼 -->
-                        <a class="btn" href="{%url 'make'%}">제작하기</a>
-                    </div>
-                </form>
-                </div>
-            
-            </div>
-
-
-
-
-            <!-- 카드 4 -->
-            <div class="card4">
-                <div class="top-section">
-                    <img style="width: 330px;height: 200px;" id="image-container3" src="{% static 'img/gift_set.jpg' %}">
-
-
-                    <div class="price">{{"15000"}}원</div>
-                </div>
-
-                <div class="product-info">
-                    <form action="../zzim">
-                        <input type="text" name="name" id="과일선물세트" style="visibility: hidden;" value="과일선물세트"/>
-                    <div class="name">롯데 제과 종합 선물세트</class>
-                        <div class="dis">#MT #이삿집</div>
-
-                        <!-- 카드안에 하트: 찜하기 -->
-                        <div class="like mb-2 mr-2" style="float: right;">
-                            <button class="likebt" style="border: none;"><i class="far fa-heart"></i></button>
-                        </div>
-
-                        <!--카드안에 구매버튼 -->
-                        <a class="btn" href="{%url 'make'%}">제작하기</a>
-                    </div>
-                </form>
-                </div>
-            
-
-            </div>
-
-            <!-- 카드 5 -->
-            <div class="card5">
-                <div class="top-section">
-                    <img style="width: 330px;height: 200px;" id="image-container3" src="{% static 'img/prod4.png' %}">
-
-
-                    <div class="price">{{"39900"}}원</div>
-                </div>
-
-                <div class="product-info">
-                    <form action="../zzim">
-                        <input type="text" name="name" id="과일선물세트" style="visibility: hidden;" value="과일선물세트"/>
-                    <div class="name">기모 맨투맨 5종 택1</class>
-                        <div class="dis">#생필품</div>
-
-                        <!-- 카드안에 하트: 찜하기 -->
-                        <div class="like mb-2 mr-2" style="float: right;">
-                            <button class="likebt" style="border: none;"><i class="far fa-heart"></i></button>
-                        </div>
-
-                        <!--카드안에 구매버튼 -->
-                        <a class="btn" href="{%url 'make'%}">제작하기</a>
-                    </div>
-                </form>
-                </div>
-         
-
-            </div>
-
-            <!-- 카드 6 -->
-            <div class="card6">
-                <div class="top-section">
-                    <img style="width: 330px;height: 220px;" id="image-container3" src="{% static 'img/gift_set1_2.png' %}">
-
-
-                    <div class="price">{{"80000"}}원</div>
-                </div>
-
-                <div class="product-info">
-                    <form action="../zzim">
-                        <input type="text" name="name" id="과일선물세트" style="visibility: hidden;" value="과일선물세트"/>
-                    <div class="name">SK2 토너</class>
-                        <div class="dis">#생필품</div>
-
-                        <!-- 카드안에 하트: 찜하기 -->
-                        <div class="like mb-2 mr-2" style="float: right;">
-                            <button class="likebt" style="border: none;"><i class="far fa-heart"></i></button>
-                        </div>
-
-                        <!--카드안에 구매버튼 -->
-                        <a class="btn" href="{%url 'make'%}">제작하기</a>
-                    </div>
-                </form>
-                </div>
-
-            </div>
         
 
+            
+    </div>
+
+    <!-- card2 -->
+
+    <div class="card1" style="margin-left: 32%;">
+        <div class="top-section">
+            <img style="width: 330px;height: 200px;" src="{% static 'img/prod4.png' %}">
+
+            <div class="price">{{"39900"}}원</div>
         </div>
+
+        <div class="product-info">
+            <form action="../zzim">
+
+                <input type="text" name="name" id="생일선물세트" style="visibility: hidden;" value="생일선물세트">
+                <div class="name">{{"기모 맨투맨 5종 택1"}}</class>
+                <div class="dis">{{"#생일선물 #추석선물세트"}}</div>
+
+                <!-- 카드안에 하트: 찜하기 -->
+                <div class="like mb-2 mr-2" style="float: right;">
+                    <button class="likebt" style="border: none;"><i class="far fa-heart"></i></button>
+                </div>
+
+                <!--카드안에 구매버튼 -->
+                <a class="btn" href="{%url 'make'%}">제작하기</a>
+                </div>
+            </form>
+        </div>
+
+
+        
+
+            
+    </div>
+
+
+    <!-- card3 -->
+
+    <div class="card1" style="margin-left: 62%;">
+        <div class="top-section">
+            <img style="width: 330px;height: 200px;" src="{% static 'img/gift_set1_2.png' %}">
+
+            <div class="price">{{"80000"}}원</div>
+        </div>
+
+        <div class="product-info">
+            <form action="../zzim">
+
+                <input type="text" name="name" id="생일선물세트" style="visibility: hidden;" value="생일선물세트">
+                <div class="name">{{"SK2 토너"}}</class>
+                <div class="dis">{{"#생일선물 #추석선물세트"}}</div>
+
+                <!-- 카드안에 하트: 찜하기 -->
+                <div class="like mb-2 mr-2" style="float: right;">
+                    <button class="likebt" style="border: none;"><i class="far fa-heart"></i></button>
+                </div>
+
+                <!--카드안에 구매버튼 -->
+                <a class="btn" href="{%url 'make'%}">제작하기</a>
+                </div>
+            </form>
+        </div>
+
+
+        
+
+            
     </div>
 
 
