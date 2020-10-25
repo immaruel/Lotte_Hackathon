@@ -85,11 +85,12 @@
                   console.log("드롭끝");
                   console.log(id);
                   console.log(price);
-
-                  //$('.item_price'+id).text(price+"원");
-                  //$('.item_name'+id).text(name);
-                 alert(document.getElementsByName("asdf").innerText);
-                  document.getElementsByName("asdf").innerText="ddd";
+                  document.querySelector("#dd"+price).innerText = price+"원";
+                  document.querySelector("#ff"+price).innerText = name;
+                 // $("."+name).text(price+"원");
+                //  $('.item_name').text(name);
+                 //alert(document.getElementsByName("asdf").innerText);
+                  //document.getElementsByName("asdf").innerText="ddd";
 
                   draggableElement.style.height = 148+'px'
                   draggableElement.style.width = 187+'px'
@@ -363,10 +364,7 @@
                                 <div class="row" style="">
                                     <div class="col-7 mt-4">
                                         <!--class="item_name"+{{i}} (0,5,6은 제외)-->
-                                        {%for i in itemss%}
-                                            <p id ="dd{{i.2}}" name="asdf">{{i.1}}</p>
-                                        {%endfor%}
-
+                                        
                                         <p class="item_name0"></p> 
                                         <p class="item_name1"></p> 
                                         <p class="item_name2"></p> 
@@ -374,8 +372,12 @@
                                         <p class="item_name4"></p>
                                         <p class="item_name5"></p>  
                                         <p class="item_name6"></p>
+                                        {%for i in itemss%}
+                                        <p id ="dd{{i.2}}" name="asdf" class="{{i.2}}"></p>
+                                        {%endfor%}
                                     </div>
                                     <div class="col-5 mt-4">
+                                        
                                         <p class="item_price0" style="visibility: hidden;"></p> 
                                         <p class="item_price1"></p> 
                                         <p class="item_price2"></p> 
@@ -383,6 +385,9 @@
                                         <p class="item_price4"></p> 
                                         <p class="item_price5"></p>
                                         <p class="item_price6"></p>
+                                        {%for i in itemss%}
+                                        <p id ="dd{{i.2}}" name="asdf" class="{{i.2}}"></p>
+                                        {%endfor%}
                                     </div>    
                                 </div>
                                 <div class="button mr-5" style="text-align: right;">
@@ -418,6 +423,7 @@
                                 <div class="row" style="">
                                     <div class="col-7 mt-4">
                                         <!--class="item_name"+{{i}} (0,5,6은 제외)-->
+                                        
                                         <p class="item_name0"></p> 
                                         <p class="item_name1"></p> 
                                         <p class="item_name2"></p> 
@@ -425,8 +431,12 @@
                                         <p class="item_name4"></p>
                                         <p class="item_name5"></p>  
                                         <p class="item_name6"></p>
+                                        {%for i in itemss%}
+                                        <p id ="dd{{i.2}}" name="asdf" class="{{i.2}}"></p>
+                                        {%endfor%}
                                     </div>
                                     <div class="col-5 mt-4">
+                                        
                                         <p class="item_price0" style="visibility: hidden;"></p> 
                                         <p class="item_price1"></p> 
                                         <p class="item_price2"></p> 
@@ -434,6 +444,9 @@
                                         <p class="item_price4"></p> 
                                         <p class="item_price5"></p>
                                         <p class="item_price6"></p>
+                                        {%for i in itemss%}
+                                        <p id ="dd{{i.2}}" name="asdf" class="{{i.2}}"></p>
+                                        {%endfor%}
                                     </div>    
                                 </div>
                                 <div class="button mr-5" style="text-align: right;">
@@ -470,15 +483,20 @@
                                 <div class="row" style="">
                                     <div class="col-7 mt-4">
                                         <!--class="item_name"+{{i}} (0,5,6은 제외)-->
-                                        <p class="item_name0"></p>
+                                        
+                                        <p class="item_name0"></p> 
                                         <p class="item_name1"></p> 
                                         <p class="item_name2"></p> 
                                         <p class="item_name3"></p> 
                                         <p class="item_name4"></p>
                                         <p class="item_name5"></p>  
                                         <p class="item_name6"></p>
+                                        {%for i in itemss%}
+                                        <p id ="dd{{i.2}}" name="asdf" class="{{i.2}}"></p>
+                                        {%endfor%}
                                     </div>
                                     <div class="col-5 mt-4">
+                                        
                                         <p class="item_price0" style="visibility: hidden;"></p> 
                                         <p class="item_price1"></p> 
                                         <p class="item_price2"></p> 
@@ -486,6 +504,9 @@
                                         <p class="item_price4"></p> 
                                         <p class="item_price5"></p>
                                         <p class="item_price6"></p>
+                                        {%for i in itemss%}
+                                        <p id ="dd{{i.2}}" name="asdf" class="{{i.2}}"></p>
+                                        {%endfor%}
                                     </div>    
                                 </div>
                                 <div class="button mr-5" style="text-align: right;">
